@@ -16,8 +16,11 @@ namespace SelfHost.ConsoleServer
         public void AuthConfig(IAppBuilder app)
         {
             HttpConfiguration config = new HttpConfiguration();
-            //RouteConfig.RegisterRoute(config);
+
+            RouteConfig.RegisterRoute(config);
+            app.UseWebApi(config);
             app.UseCors(CorsOptions.AllowAll);
+
             app.Map("/signalr", map =>
             {
                 HubConfiguration hcf = new HubConfiguration();

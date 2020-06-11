@@ -11,7 +11,7 @@ namespace SelfHost.ConsoleServer
     {
         static void Main(string[] args)
         {
-            string uri = "http://localhost:8989/";
+            string uri = "http://localhost:8983/";
 
             using (WebApp.Start<Startup>(uri))
             {
