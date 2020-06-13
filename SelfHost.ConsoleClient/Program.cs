@@ -26,7 +26,7 @@ namespace SelfHost.ConsoleClient
             string uri = "http://localhost:8983/";
 
             HubConnection connection = new HubConnection(uri);
-            var proxy = connection.CreateHubProxy("notifificationHub");
+            var proxy = connection.CreateHubProxy("notificationHub");
 
             try
             {

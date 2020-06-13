@@ -1,0 +1,31 @@
+﻿<script type="text/javascript">
+
+    $(function () {
+
+        $.connection.hub.url = "http://localhost:8983/signalr";
+        var connection = $.connection.notificationHub;
+
+        connection.client.displayTime = function (time) {
+            $("#time").css("background", "blue").css("color", "white").text(time);
+        };
+
+        $.connection.hub.starting(function () {
+
+            $("#time").text("connection starting...");
+        });
+
+        $.connection.hub.disconnected(function () {
+            $("#time").css("background", "red").text("connection starting...");
+        });
+
+        $.connection.hub.start().done(function () {
+            connection.server.serverTime();
+        });
+
+
+
+
+    });
+
+</script>
+

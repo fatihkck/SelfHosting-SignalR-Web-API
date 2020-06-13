@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SelfHost.ConsoleServer
@@ -18,6 +19,8 @@ namespace SelfHost.ConsoleServer
                 Console.WriteLine($"Server started at {uri} on {DateTime.UtcNow:F}");
                 Console.ReadLine();
             }
+
+            Console.Read();
         }
     }
 }

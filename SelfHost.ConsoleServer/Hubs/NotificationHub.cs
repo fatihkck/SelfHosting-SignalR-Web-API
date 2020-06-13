@@ -24,7 +24,7 @@ namespace SelfHost.ConsoleServer.Hubs
         public double Price { get;}
     }
 
-    public class NotifificationHub:Hub
+    public class NotificationHub:Hub
     {
 
         public ObservableCollection<Product> GetAllProducts()
@@ -45,14 +45,14 @@ namespace SelfHost.ConsoleServer.Hubs
 
         public void ServerTime()
         {
-            //do
-            //{
+            do
+            {
                 Console.WriteLine($"Connection from {Context.ConnectionId} time : {DateTime.UtcNow:T}");
                 Clients.All.displayTime($"{DateTime.UtcNow:T}");
                 Thread.Sleep(TimeSpan.FromSeconds(1));
 
-            //} while (true);
-            
+            } while (true);
+
         }
     }
 }
